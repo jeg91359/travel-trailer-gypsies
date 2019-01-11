@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PERSONS } from '../../../persons-list';
 
 @Component({
   selector: 'app-profile-landing',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-landing.component.scss']
 })
 export class ProfileLandingComponent implements OnInit {
+
+  persons = PERSONS;
 
   constructor() { }
 

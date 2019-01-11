@@ -7,10 +7,11 @@ import { JWBootstrapSwitchModule } from 'jw-bootstrap-switch-ng2';
 import { AgmCoreModule } from '@agm/core';
 import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
-import { Profile1Component } from './profile/profile1/profile1.component';
+import { ProfileComponent } from './profile/profile/profile.component';
 import { LiveComponent } from './live.component';
 import { ProfileLandingComponent } from './profile/profile-landing/profile-landing.component';
 import { RouterModule } from '@angular/router';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { RouterModule } from '@angular/router';
         LiveComponent,
         LandingComponent,
         LoginComponent,
-        Profile1Component,
-        ProfileLandingComponent]
+        ProfileComponent,
+        ProfileLandingComponent,
+        PortfolioComponent]
 })
 export class LiveModule { }

@@ -1,0 +1,40 @@
+<div class="wrapper">
+  <div class="page-header page-header-small" filter-color="orange">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+      </div>
+      <div class="container">
+          <div class="content-center">
+              <div class="photo-container">
+                  <img src={{persons.photo}} alt="">
+              </div>
+              <h3 class="title">{{persons.name}}</h3>
+              <p class="category">{{persons.category}}</p>
+          </div>
+      </div>
+  </div>
+  <div class="section">
+      <div class="container">
+        <h3 class="title">{{persons.label}}</h3>
+        <h5 class="description">{{persons.description}} </h5>
+      </div>
+  </div>
+  <footer class="footer footer-default">
+      <div class="container">
+          <nav>
+              <ul>
+                  <li>
+                      <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                          MIT License
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+          <div class="copyright">
+              &copy;
+              {{data | date: 'yyyy'}}, Designed by
+              <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+              <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>. Modified by Jim Garoutte
+          </div>
+      </div>
+  </footer>
+</div>
