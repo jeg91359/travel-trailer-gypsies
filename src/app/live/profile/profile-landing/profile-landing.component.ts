@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PERSONS } from '../../../persons-list';
+// import { PERSONS } from '../../../persons-list';
 
 @Component({
   selector: 'app-profile-landing',
@@ -8,7 +8,7 @@ import { PERSONS } from '../../../persons-list';
 })
 export class ProfileLandingComponent implements OnInit {
 
-  persons = PERSONS;
+  // persons = PERSONS;
 
   constructor() { }
 

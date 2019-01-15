@@ -10,8 +10,8 @@ export const PERSONS: Person[] = [
 
         {id: 2, 
         name: 'Jim Garoutte', 
-        category: 'Driver and Web Developer', 
+        category: 'Driving and Website Development', 
         label: 'About him', 
         description: 'Jim does as little as possible.', 
-        photo: 'assets/img/Jim_Garoutte_7.jpg'}
+        photo: 'assets/img/Jim_Garoutte_3.jpg'}
 ]

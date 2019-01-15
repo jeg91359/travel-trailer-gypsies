@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import * as Rellax from 'rellax';
 import { Person } from '../../../person';
 import { PERSONS } from '../../../persons-list';
@@ -8,6 +9,7 @@ import { PERSONS } from '../../../persons-list';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
 export class ProfileComponent implements OnInit {
   zoom: number = 14;
   lat: number = 44.445248;
@@ -19,18 +21,31 @@ export class ProfileComponent implements OnInit {
 
     persons = PERSONS;
 
-    // person: Person = {
-    //   id: 1,
-    //   name: 'Eloisa Garoutte',
-    //   category: 'Logistics and Photography',
-    //   label: 'About her',
-    //   description: 'Eloisa is our resident logistics expert. Every bite of food, item of clothing and creature comfort available in our trailer can be attributed to her skill at planning and preparation. In addition, she is an artist of considerable range. She draws, paints, and documents our travels through her skilled photography.',
-    //   photo: 'assets/img/Eloisa_Garoutte_2.jpg'
-    // }
+    id: number;
+    name: string;
+    category: string;
+    label: string;
+    description: string;
+    photo: string;
+    private sub: any;
 
-    constructor() { }
+    constructor(private route: ActivatedRoute) {}
 
     ngOnInit() {
+      this.sub = this.route.params.subscribe(params => {
+        this.id = +params['id'];
+      });
+
+      for (var j = 0; j < this.persons.length; j++){
+        if (this.id == this.persons[j].id){
+          this.name = this.persons[j].name;
+          this.category = this.persons[j].category;
+          this.label = this.persons[j].label;
+          this.description = this.persons[j].description;
+          this.photo = this.persons[j].photo;
+        } 
+      }
+
       var rellaxHeader = new Rellax('.rellax-header');
 
         var body = document.getElementsByTagName('body')[0];
@@ -43,6 +58,8 @@ export class ProfileComponent implements OnInit {
         body.classList.remove('profile-page');
         var navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.remove('navbar-transparent');
+
+        this.sub.unsubscribe();
     }
 
 }
