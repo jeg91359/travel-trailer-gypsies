@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as Rellax from 'rellax';
-import { Person } from '../../../person';
 import { PERSONS } from '../../../persons-list';
 
 @Component({
@@ -19,15 +18,16 @@ export class ProfileComponent implements OnInit {
     focus;
     focus1;
 
-    persons = PERSONS;
+  persons = PERSONS;
 
-    id: number;
-    name: string;
-    category: string;
-    label: string;
-    description: string;
-    photo: string;
-    private sub: any;
+  id: number;
+  name: string;
+  category: string;
+  label: string;
+  description: string;
+  photo: string;
+  private sub: any;
+  showPortfolio: boolean = false;
 
     constructor(private route: ActivatedRoute) {}
 
@@ -44,6 +44,10 @@ export class ProfileComponent implements OnInit {
           this.description = this.persons[j].description;
           this.photo = this.persons[j].photo;
         } 
+
+        if (this.id ==1){
+          this.showPortfolio = true;
+        }
       }
 
       var rellaxHeader = new Rellax('.rellax-header');

@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="page-header page-header-small" filter-color="orange">
-      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg5.jpg') ;">
+      <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/Tent_Rocks_6.jpg') ;">
       </div>
       <div class="container">
           <div class="content-center">
@@ -17,6 +17,9 @@
         <h3 class="title">{{label}}</h3>
         <h5 class="description">{{description}} </h5>
       </div>
+  </div>
+  <div *ngIf="showPortfolio">
+        <app-portfolio></app-portfolio>
   </div>
   <footer class="footer footer-default">
       <div class="container">
