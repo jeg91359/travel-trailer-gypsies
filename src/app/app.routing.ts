@@ -9,6 +9,8 @@ import { LoginComponent } from './live/login/login.component';
 import { ProfileLandingComponent } from './live/profile/profile-landing/profile-landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { ProfileComponent } from './live/profile/profile/profile.component';
+import { AdventureLandingComponent } from './live/adventure/adventure-landing/adventure-landing.component';
+import { AdventureComponent } from './live/adventure/adventure/adventure.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'live/landing', pathMatch: 'full' },
@@ -17,7 +19,9 @@ const routes: Routes =[
     { path: 'live/landing',     component: LandingComponent },
     { path: 'live/login',       component: LoginComponent },
     { path: 'live/profile-landing',     component: ProfileLandingComponent },
-    { path: 'live/profile/:id',     component: ProfileComponent }
+    { path: 'live/profile/:id',     component: ProfileComponent },
+    { path: 'live/adventure-landing', component: AdventureLandingComponent },
+    { path: 'live/adventure/:id',     component: AdventureComponent }
 ];
 
 @NgModule({

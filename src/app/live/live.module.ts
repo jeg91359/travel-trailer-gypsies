@@ -12,6 +12,8 @@ import { LiveComponent } from './live.component';
 import { ProfileLandingComponent } from './profile/profile-landing/profile-landing.component';
 import { RouterModule } from '@angular/router';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { AdventureLandingComponent } from './adventure/adventure-landing/adventure-landing.component';
+import { AdventureComponent } from './adventure/adventure/adventure.component';
 
 @NgModule({
     imports: [
@@ -33,6 +35,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
         LoginComponent,
         ProfileComponent,
         ProfileLandingComponent,
-        PortfolioComponent]
+        PortfolioComponent,
+        AdventureLandingComponent,
+        AdventureComponent]
 })
 export class LiveModule { }
