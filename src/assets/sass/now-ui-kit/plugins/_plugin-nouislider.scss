@@ -234,7 +234,15 @@
 .noUi-marker-vertical.noUi-marker-large {
 	width: 15px;
 }
-
+.noUi-tooltip{
+    margin-top: 30px;
+}
+.noUi-handle .noUi-tooltip{
+    font-size: 12px;
+}
+.noUi-handle.noUi-active .noUi-tooltip{
+    font-size: 8px;
+}
 .noUi-tooltip {
 	display: block;
 	position: absolute;
@@ -255,7 +263,7 @@
 -webkit-transform: translate(0, -50%);
     transform: translate(0, -50%);
     top: 50%;
-    right: 120%;
+    right: 100%;
 }
 
 

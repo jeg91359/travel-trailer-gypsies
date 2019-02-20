@@ -2,10 +2,6 @@
 .progress-container{
     position: relative;
 
-    & + .progress-container,
-    & ~ .progress-container{
-        margin-top: $margin-base-vertical;
-    }
     .progress-badge{
         color: $default-color;
         font-size: $font-size-small;

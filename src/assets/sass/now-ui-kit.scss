@@ -1,12 +1,13 @@
+
 /*!
 
  =========================================================
- * Now-ui-kit-angular - v1.0.1
+ * Now-ui-kit-pro-angular - v1.0.2
  =========================================================
 
- * Product Page: https://www.creative-tim.com/product/now-ui-kit-angular
+ * Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-angular
  * Copyright 2017 Creative Tim (https://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md)
+ * View License on https://www.creative-tim.com/license
 
  * Designed by www.invisionapp.com Coded by www.creative-tim.com
 
@@ -15,14 +16,18 @@
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
-
+// @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import 'now-ui-kit/variables';
 @import 'now-ui-kit/mixins';
 
 // Plugins CSS
 @import "now-ui-kit/plugins/plugin-bootstrap-switch";
 @import "now-ui-kit/plugins/plugin-nouislider";
-@import "now-ui-kit/plugins/plugin-datepicker";
+@import "now-ui-kit/plugins/plugin-isometricGrids";
+@import "now-ui-kit/plugins/plugin-bootstrap-select";
+@import "now-ui-kit/plugins/plugin-tagsinput";
+@import "now-ui-kit/plugins/plugin-fileupload";
+@import "now-ui-kit/plugins/plugin-datetimepicker";
 
 // Core CSS
 @import "now-ui-kit/buttons";
@@ -36,7 +41,6 @@
 @import "now-ui-kit/pills";
 
 // components
-@import "now-ui-kit/social-buttons";
 @import "now-ui-kit/tabs";
 @import "now-ui-kit/navbar";
 @import "now-ui-kit/dropdown";
@@ -44,6 +48,9 @@
 @import "now-ui-kit/images";
 @import "now-ui-kit/popups";
 @import "now-ui-kit/nucleo-outline";
+@import "now-ui-kit/tables";
+@import "now-ui-kit/info-areas";
+@import "now-ui-kit/media";
 @import "now-ui-kit/modals";
 @import "now-ui-kit/carousel";
 @import "now-ui-kit/cards";
@@ -52,6 +59,5 @@
 // example pages and sections
 @import "now-ui-kit/example-pages";
 @import "now-ui-kit/sections";
-
 
 @import "now-ui-kit/responsive";

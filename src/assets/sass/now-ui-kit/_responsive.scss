@@ -1,58 +1,12 @@
 @media screen and (max-width: 991px){
-    .sidebar-collapse{
-        @include navbar-collapse();
-
-        &.menu-on-left{
-            .navbar-collapse{
-                right: auto;
-                left: 0;
-                @include transform-translate-x(-300px);
-            }
-        }
-
-        .nav-open &{
-            .navbar-collapse{
-                @include transform-translate-x(0px);
-            }
-
-            .wrapper{
-                @include transform-translate-x(-150px);
-            }
-
-            .navbar-translate{
-                @include transform-translate-x(-300px);
-            }
-
-            &.menu-on-left{
-                .navbar-collapse{
-                    @include transform-translate-x(0px);
-                }
-
-                .navbar-translate{
-                    @include transform-translate-x(300px);
-                }
-
-                .wrapper{
-                    @include transform-translate-x(150px);
-                }
-
-                #bodyClick{
-                    right: auto;
-                    left: 300px;
-                }
-            }
-        }
-    }
-
-    .bootstrap-collapse{
-        .navbar .navbar-collapse{
-            background: none !important;
-        }
-        @include navbar-responsive();
-    }
+    @include navbar-collapse();
 
     .profile-photo .profile-photo-small{
         margin-left: -2px;
+    }
+
+    [class*="navbar-toggleable-"] .navbar-collapse{
+        width: 300px;
     }
 
     .button-dropdown{
@@ -71,15 +25,6 @@
 
     .section-nucleo-icons .icons-container{
         margin-top: 65px;
-    }
-
-    .navbar-nav{
-        .nav-link{
-            i.fa,
-            i.now-ui-icons{
-                opacity: .5;
-            }
-        }
     }
 
     .section-images{
@@ -105,12 +50,33 @@
 }
 
 @media screen and (min-width: 992px){
+    .navbar-nav{
+        .nav-link{
+            &.profile-photo{
+                padding: 0;
+                margin: 7px $padding-base-horizontal;
+            }
+
+            &.btn:not(.btn-sm){
+                margin: 0;
+            }
+        }
+
+        .nav-item:not(:last-child){
+            margin-right: 5px;
+        }
+
+    }
+
+    .card.card-form-horizontal{
+        [class*="col-sm-"]:not(:last-child),
+        [class*="col-md-"]:not(:last-child){
+            padding-right: 0;
+        }
+    }
+
     .burger-menu{
         @include navbar-collapse();
-
-        .nav-open & .navbar-collapse{
-            @include transform-translate-x(0px);
-        }
 
         .navbar-collapse {
             display: block !important;
@@ -142,7 +108,7 @@
             @include transform-translate-x(-300px);
         }
 
-        [class*="navbar-expand-"]{
+        .navbar-toggleable-md{
             .navbar-nav .dropdown-menu{
                 position: static;
                 float: none;
@@ -151,10 +117,6 @@
             .navbar-toggler{
                 display: inline-block;
             }
-        }
-
-        .section-navbars .navbar-collapse{
-            display: none !important;
         }
 
         .nav-open &{
@@ -183,33 +145,13 @@
         }
     }
 
-    .navbar-nav{
-        .nav-link{
-            &.profile-photo{
-                padding: 0;
-                margin: 7px $padding-base-horizontal;
-            }
 
-            &.btn:not(.btn-sm){
-                margin: 0;
-            }
-        }
-
-        .nav-item:not(:last-child){
-            margin-right: 5px;
-        }
-
-    }
 
     .section-nucleo-icons .icons-container{
         margin: 0 0 0 auto;
     }
 
-    .dropdown-menu .dropdown-item{
-        color: inherit;
-    }
-
-    .footer{
+    .footer:not(.footer-big){
         .copyright{
             float: right;
         }
@@ -233,7 +175,7 @@
 @media screen and (max-width: 768px){
     .image-container{
         &.image-left{
-            margin-bottom: 220px;
+            margin-bottom: 260px;
 
             p.blockquote{
                 margin: 0 auto;
@@ -241,6 +183,35 @@
                 right: 0;
             }
         }
+    }
+
+    .header-2{
+        .card-form-horizontal .input-group, .card-form-horizontal .form-group{
+            margin-bottom: 10px;
+        }
+    }
+
+    .contactus-2 .card-contact{
+        max-width: inherit;
+        margin:0;
+        margin-top: 15px;
+    }
+
+    .section-story-overview .image-container + .category{
+        padding-top: 50px;
+    }
+
+    .features-7 .image-container img{
+        left: 0px;
+        top: 0;
+        max-width: inherit;
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .footer.footer-big .social-feed i{
+        padding-bottom: 10px;
     }
 
     .nav-tabs{
@@ -261,15 +232,72 @@
     }
 }
 
+@media screen and (max-width: 580px) {
+    .alert{
+        button.close{
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+
+
 @media screen and (max-width: 576px){
-    .navbar[class*='navbar-expand-'] .container{
+    .navbar[class*='navbar-toggleable-'] .container{
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .typography-line span{
+        margin-left: 0;
     }
 
     .footer{
         .copyright{
             text-align: center;
+        }
+    }
+
+    .projects-1{
+        .nav-pills{
+            display: block;
+
+            .nav-item .nav-link{
+                margin: 0 auto;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .subscribe-line .card-form-horizontal .btn{
+        margin-top: 10px;
+    }
+
+    .modal .modal-dialog .modal-header button.close{
+        font-size: 18px;
+        right: 12px;
+        top:10px;
+    }
+
+    .header-3 .btn{
+        margin-bottom: 10px;
+    }
+
+    .card.card-fashion:not(.card-background):before{
+        display: none;
+    }
+
+    .profile-page{
+        .content-center{
+            margin: 10px 0 0;
+
+            .content .social-description{
+                width: 105px;
+                max-width: 105px;
+            }
         }
     }
 
@@ -327,6 +355,19 @@
             top: 99%;
         }
     }
+
+    .footer nav{
+        display: block;
+        float: none;
+    }
+
+    #social-buttons > .row{
+        .col-md-1:nth-child(2) p,
+        .col-md-1:nth-child(3) p,
+        .col-md-3 p{
+            display: none;
+        }
+    }
 }
 
 @media screen and (max-width: 517px) {
@@ -345,48 +386,6 @@
         .hero-images-container-2{
             top: 66%;
             right: 14%;
-        }
-    }
-}
-
-// Ipad responsive portrait mode
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and ( orientation : portrait){
-    .section-images .hero-images-container,
-    .section-images .hero-images-container-1,
-    .section-images .hero-images-container-2{
-        margin-top: -15vh;
-        margin-left: 80px;
-    }
-
-    .section-images .hero-images-container{
-        max-width: 300px;
-    }
-
-    .section-images .hero-images-container-1{
-        right: 28%;
-        top: 40%;
-    }
-
-    .section-images .hero-images-container-2{
-        right: 21%;
-        top: 55%;
-    }
-
-    .index-page .category-absolute{
-        top: 90vh;
-    }
-}
-
-@media screen and (max-width: 580px) {
-    .alert{
-        button.close{
-            position: absolute;
-            right: 11px;
-            top: 50%;
-            transform: translateY(-50%);
         }
     }
 }

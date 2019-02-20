@@ -8,5 +8,12 @@
         color: $color;
     }
 
+    //inputs
+    @include input-coloured-bg($opacity-5, $white-color, $white-color, $transparent-bg, $opacity-1, $opacity-2);
 
+    .input-group-text,
+    .form-group.form-group-no-border .input-group-text,
+    .input-group.form-group-no-border .input-group-text{
+        color: $opacity-8;
+    }
 }

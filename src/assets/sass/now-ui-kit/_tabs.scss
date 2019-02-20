@@ -4,6 +4,15 @@
     border: 0;
     padding: $padding-large-vertical $padding-base-horizontal;
 
+    &:not(.nav-tabs-neutral) > .nav-item > .nav-link.active{
+        box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.3);
+    }
+
+    .card &{
+        border-top-right-radius: $border-radius-small;
+        border-top-left-radius: $border-radius-small;
+    }
+
     > .nav-item{
         > .nav-link{
             color: $default-color;
@@ -21,8 +30,9 @@
             }
 
             &.active{
-                border: 1px solid $default-color;
+                background-color: $light-black;
                 border-radius: 30px;
+                color: $white-color;
             }
 
             i.now-ui-icons{
@@ -38,75 +48,81 @@
             color: rgba(255,255,255,0.5);
         }
     }
+}
 
-    &.nav-tabs-neutral{
-        > .nav-item{
-            > .nav-link{
-                color: $white-color;
+.nav-tabs-neutral{
+  .nav-tabs{
+    .nav-item{
+       > .nav-link{
+           color: $white-color;
 
-                &.active{
-                    border-color: $opacity-5;
-                    color: $white-color;
-                }
+           &.active{
+               background-color: $opacity-2;
+               color: $white-color;
+           }
+       }
+   }
+  }
+}
+
+.nav-tabs-primary{
+  .nav-tabs{
+    > .nav-item{
+        > .nav-link{
+            &.active{
+                background-color: $primary-color;
             }
         }
     }
+  }
+}
 
-    &.nav-tabs-primary{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $primary-color;
-                    color: $primary-color;
-                }
+.nav-tabs-info{
+  .nav-tabs{
+    > .nav-item{
+        > .nav-link{
+            &.active{
+                background-color: $info-color;
             }
         }
     }
+  }
+}
 
-    &.nav-tabs-info{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $info-color;
-                    color: $info-color;
-                }
+.nav-tabs-danger{
+  .nav-tabs{
+    > .nav-item{
+        > .nav-link{
+            &.active{
+                background-color: $danger-color;
             }
         }
     }
+  }
+}
 
-    &.nav-tabs-danger{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $danger-color;
-                    color: $danger-color;
-                }
+.nav-tabs-warning{
+  .nav-tabs{
+    > .nav-item{
+        > .nav-link{
+            &.active{
+                background-color: $warning-color;
             }
         }
     }
+  }
+}
 
-    &.nav-tabs-warning{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $warning-color;
-                    color: $warning-color;
-                }
+.nav-tabs-success{
+  .nav-tabs{
+    > .nav-item{
+        > .nav-link{
+            &.active{
+                background-color: $success-color;
             }
         }
     }
-
-    &.nav-tabs-success{
-        > .nav-item{
-            > .nav-link{
-                &.active{
-                    border-color: $success-color;
-                    color: $success-color;
-                }
-            }
-        }
-    }
-
+  }
 }
 [data-tabs-color="orange"]{
   .nav-tabs{
@@ -116,7 +132,7 @@
         color: $white-color;
         &.active{
           box-shadow: none;
-          border-color: rgba(255, 255, 255, 0.5);
+          background-color: $opacity-2;
         }
     }
   }
