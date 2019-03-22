@@ -6,14 +6,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { AgmCoreModule } from '@agm/core';
 import { LandingComponent } from './landing/landing.component';
-import { ProfileComponent } from './profile/profile/profile.component';
+import { LoginComponent } from './login/login.component';
 import { LiveComponent } from './live.component';
-import { ProfileLandingComponent } from './profile/profile-landing/profile-landing.component';
 import { RouterModule } from '@angular/router';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { AdventureLandingComponent } from './adventure/adventure-landing/adventure-landing.component';
-import { AdventureComponent } from './adventure/adventure/adventure.component';
 import { BlogpostsComponent } from './blogposts/blogposts.component';
+import { BlogpostSwtdComponent } from './blogpost-swtd/blogpost-swtd.component';
+import { BlogpostRweaComponent } from './blogpost-rwea/blogpost-rwea.component';
 
 @NgModule({
     imports: [
@@ -30,11 +28,9 @@ import { BlogpostsComponent } from './blogposts/blogposts.component';
     declarations: [
         LiveComponent,
         LandingComponent,
-        ProfileComponent,
-        ProfileLandingComponent,
-        PortfolioComponent,
-        AdventureLandingComponent,
-        AdventureComponent,
-        BlogpostsComponent]
+        BlogpostsComponent,
+        BlogpostSwtdComponent,
+        BlogpostRweaComponent,
+        LoginComponent]
 })
 export class LiveModule { }
