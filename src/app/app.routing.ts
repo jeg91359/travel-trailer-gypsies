@@ -6,6 +6,7 @@ import { LandingComponent } from './live/landing/landing.component';
 import { BlogpostsComponent } from './live/blogposts/blogposts.component';
 import { BlogpostSwtdComponent } from './live/blogpost-swtd/blogpost-swtd.component';
 import { BlogpostRweaComponent } from './live/blogpost-rwea/blogpost-rwea.component';
+import { BlogpostHiwrComponent } from './live/blogpost-hiwr/blogpost-hiwr.component';
 
 
 const routes: Routes =[
@@ -13,7 +14,8 @@ const routes: Routes =[
     { path: 'live/landing',     component: LandingComponent },
     { path: 'live/blogposts',       component: BlogpostsComponent },
     { path: 'live/blogpost-swtd',     component: BlogpostSwtdComponent },
-    { path: 'live/blogpost-rwea',     component: BlogpostRweaComponent }
+    { path: 'live/blogpost-rwea',     component: BlogpostRweaComponent },
+    { path: 'live/blogpost-hiwr',     component: BlogpostHiwrComponent }
 ];
 
 @NgModule({

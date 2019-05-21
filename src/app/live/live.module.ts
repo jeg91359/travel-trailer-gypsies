@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { BlogpostsComponent } from './blogposts/blogposts.component';
 import { BlogpostSwtdComponent } from './blogpost-swtd/blogpost-swtd.component';
 import { BlogpostRweaComponent } from './blogpost-rwea/blogpost-rwea.component';
+import { BlogpostHiwrComponent } from './blogpost-hiwr/blogpost-hiwr.component';
 
 @NgModule({
     imports: [
@@ -31,6 +32,7 @@ import { BlogpostRweaComponent } from './blogpost-rwea/blogpost-rwea.component';
         BlogpostsComponent,
         BlogpostSwtdComponent,
         BlogpostRweaComponent,
-        LoginComponent]
+        LoginComponent,
+        BlogpostHiwrComponent]
 })
 export class LiveModule { }
