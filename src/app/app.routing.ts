@@ -7,10 +7,12 @@ import { BlogpostsComponent } from './live/blogposts/blogposts.component';
 import { BlogpostSwtdComponent } from './live/blogpost-swtd/blogpost-swtd.component';
 import { BlogpostRweaComponent } from './live/blogpost-rwea/blogpost-rwea.component';
 import { BlogpostHiwrComponent } from './live/blogpost-hiwr/blogpost-hiwr.component';
+import { LoginComponent } from './live/login/login.component';
 
 
 const routes: Routes =[
     { path: '', redirectTo: 'live/landing', pathMatch: 'full' },
+    { path: 'live/login',     component: LoginComponent },
     { path: 'live/landing',     component: LandingComponent },
     { path: 'live/blogposts',       component: BlogpostsComponent },
     { path: 'live/blogpost-swtd',     component: BlogpostSwtdComponent },

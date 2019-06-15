@@ -184,7 +184,7 @@
     }
 
     &:before{
-        background-color: rgba(0,0,0,.3);
+        background-color: rgba(0,0,0,0); //changed last number from .3 to 0...jeg
     }
 
     &[filter-color="orange"]{
