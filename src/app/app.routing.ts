@@ -8,11 +8,13 @@ import { BlogpostSwtdComponent } from './live/blogpost-swtd/blogpost-swtd.compon
 import { BlogpostRweaComponent } from './live/blogpost-rwea/blogpost-rwea.component';
 import { BlogpostHiwrComponent } from './live/blogpost-hiwr/blogpost-hiwr.component';
 import { LoginComponent } from './live/login/login.component';
+import { RegisterComponent } from './live/register/register.component';
 
 
 const routes: Routes =[
     { path: '', redirectTo: 'live/landing', pathMatch: 'full' },
     { path: 'live/login',     component: LoginComponent },
+    { path: 'live/register',     component: RegisterComponent },
     { path: 'live/landing',     component: LandingComponent },
     { path: 'live/blogposts',       component: BlogpostsComponent },
     { path: 'live/blogpost-swtd',     component: BlogpostSwtdComponent },

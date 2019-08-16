@@ -13,6 +13,7 @@ import { BlogpostsComponent } from './blogposts/blogposts.component';
 import { BlogpostSwtdComponent } from './blogpost-swtd/blogpost-swtd.component';
 import { BlogpostRweaComponent } from './blogpost-rwea/blogpost-rwea.component';
 import { BlogpostHiwrComponent } from './blogpost-hiwr/blogpost-hiwr.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
     imports: [
@@ -33,6 +34,7 @@ import { BlogpostHiwrComponent } from './blogpost-hiwr/blogpost-hiwr.component';
         BlogpostSwtdComponent,
         BlogpostRweaComponent,
         LoginComponent,
-        BlogpostHiwrComponent]
+        BlogpostHiwrComponent,
+        RegisterComponent]
 })
 export class LiveModule { }

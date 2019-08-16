@@ -1,6 +1,7 @@
 {
-  "name": "now-ui-kit-pro-angular",
-  "version": "1.1.0",
+  "name": "travel-trailer-gypsies",
+  "version": "1.0.0",
+  "author": "Jim Garoutte",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,6 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "start:server": "nodemon server.js",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
   },
   "private": true,
@@ -25,16 +27,25 @@
     "@angular/router": "7.2.4",
     "@ng-bootstrap/ng-bootstrap": "4.0.2",
     "angular2-multiselect-dropdown": "4.2.1",
+    "bcryptjs": "*",
+    "body-parser": "^1.19.0",
     "bootstrap": "4.2.1",
     "copy-webpack-plugin": "4.6.0",
     "core-js": "2.6.4",
+    "cors": "*",
+    "express": "*",
     "font-awesome": "4.7.0",
     "jquery": "3.3.1",
+    "jsonwebtoken": "*",
     "jw-bootstrap-switch-ng2": "2.0.5",
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.2",
     "ng2-nouislider": "1.7.13",
     "ngx-chips": "2.0.0-beta.0",
     "ngx-gallery": "5.9.1",
     "nouislider": "13.1.0",
+    "passport": "*",
+    "passport-jwt": "*",
     "popper.js": "1.14.7",
     "rellax": "1.7.2",
     "rxjs": "6.4.0",
@@ -58,9 +69,22 @@
     "karma-coverage-istanbul-reporter": "2.0.4",
     "karma-jasmine": "2.0.1",
     "karma-jasmine-html-reporter": "1.4.0",
+    "nodemon": "^1.19.1",
     "protractor": "5.4.2",
     "ts-node": "8.0.2",
     "tslint": "5.12.1",
     "typescript": "^3.2.4"
-  }
+  },
+  "description": "Todo: create a ReadMe file...",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeg91359/travel-trailer-gypsies.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeg91359/travel-trailer-gypsies/issues"
+  },
+  "homepage": "https://github.com/jeg91359/travel-trailer-gypsies#readme"
 }

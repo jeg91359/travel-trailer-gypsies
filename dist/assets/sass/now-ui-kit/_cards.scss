@@ -406,7 +406,7 @@
         left: 0;
         top: 0;
         content: "";
-        background-color: rgba(0,0,0,.63);
+        background-color: rgba(0,0,0,0); //changed last number from .63 to 0...jeg
         border-radius: $border-radius-large;
     }
 }
@@ -511,7 +511,7 @@
         }
     }
     &.card-background:after{
-        background-color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(0, 0, 0, .65);
     }
 }
 

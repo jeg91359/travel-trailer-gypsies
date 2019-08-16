@@ -9,7 +9,10 @@
         vertical-align: middle;
 
         &:not(.btn):not(.dropdown-item){
-            color: $white-color;
+            color: $primary-color; //modified from white to primary...jeg
+            font-size: 2em;
+            font-weight: 700;
+            text-align: left;
         }
     }
 
@@ -115,7 +118,7 @@
 
     .navbar-brand{
         text-transform: uppercase;
-        font-size: $font-size-small;
+        font-size: $font-size-large-navbar; // modified from small...jeg
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;

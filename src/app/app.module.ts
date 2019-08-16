@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app.routing';
 import { LiveModule } from './live/live.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
         FormsModule,
         RouterModule,
         AppRoutingModule,
-        LiveModule
+        LiveModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]
