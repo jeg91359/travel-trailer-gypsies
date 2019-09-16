@@ -1,4 +1,6 @@
-const app = require("./backend/app");
+//This is the Node Server...run it by typing "nodemon server.js" in the terminal
+
+const app = require("./backend/app"); //this is the express app
 const debug = require("debug")("node-angular");
 const http = require("http");
 
@@ -50,8 +52,6 @@ const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
 server.listen(port);
-
-
 
 // const Express = require("express");
 // const BodyParser = require("body-parser");

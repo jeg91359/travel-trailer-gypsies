@@ -14,11 +14,12 @@
             <div class="description">
               <h5 class="info-title">Create Account?</h5>
               <p class="description">
-                You only need to create an account if you want the ability
-                to comment on blog posts.
+                You only need to create an account if you want the ability to
+                comment on blog posts.
               </p>
             </div>
           </div>
+
           <!-- <div class="info info-horizontal">
             <div class="icon icon-primary">
               <i class="now-ui-icons media-1_button-pause"></i>
@@ -60,7 +61,13 @@
                               </button>
                               <h5 class="card-description"> or be classical </h5>
                           </div> -->
-              <form (submit)="onRegister(registerForm)" #registerForm="ngForm" class="form was-validated" method="" action="">
+              <form
+                (submit)="onRegister(registerForm)"
+                #registerForm="ngForm"
+                class="form was-validated"
+                method=""
+                action=""
+              >
                 <div
                   class="input-group"
                   [ngClass]="{ 'input-group-focus': focus === true }"
@@ -77,6 +84,7 @@
                     (focus)="focus = true"
                     (blur)="focus = false"
                     ngModel
+                    name="firstName"
                     required
                   />
                 </div>
@@ -86,7 +94,7 @@
                 >
                   <div class="input-group-prepend">
                     <span class="input-group-text">
-                      <i class="now-ui-icons text_caps-small"></i
+                      <i class="now-ui-icons users_circle-08"></i
                     ></span>
                   </div>
                   <input
@@ -96,6 +104,7 @@
                     (focus)="focus1 = true"
                     (blur)="focus1 = false"
                     ngModel
+                    name="lastName"
                     required
                   />
                 </div>
@@ -115,6 +124,27 @@
                     (focus)="focus2 = true"
                     (blur)="focus2 = false"
                     ngModel
+                    name="email"
+                    required
+                  />
+                </div>
+                <div
+                  class="input-group"
+                  [ngClass]="{ 'input-group-focus': focus2 === true }"
+                >
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="now-ui-icons text_caps-small"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Username (default is email)..."
+                    (focus)="focus2 = true"
+                    (blur)="focus2 = false"
+                    ngModel
+                    name="username"
                     required
                   />
                 </div>
@@ -132,6 +162,7 @@
                     (focus)="focus2 = true"
                     (blur)="focus2 = false"
                     ngModel
+                    name="password1"
                     required
                     minlength="8"
                   />
@@ -150,6 +181,7 @@
                     (focus)="focus2 = true"
                     (blur)="focus2 = false"
                     ngModel
+                    name="password2"
                     required
                     minlength="8"
                   />
@@ -165,9 +197,12 @@
                                   </label>
                               </div> -->
                 <div class="card-footer text-center">
-                  <a href="#pablo" class="btn btn-primary btn-round btn-lg"
-                    >Save</a
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-round btn-lg"
                   >
+                    Save
+                  </button>
                 </div>
               </form>
             </div>
