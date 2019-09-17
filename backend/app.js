@@ -35,14 +35,12 @@ app.get("/users", (req, res, next) => {
       id: "kuhoiughn2211",
       name: "John Doe",
       email: "doe@gmail.com",
-      username: "jd123",
       password: "jd12345"
     },
     {
       id: "oiwdcoij39804ur90384",
       name: "Jane Smith",
       email: "smithj@gmail.com",
-      username: "js123",
       password: "js1234"
     }
   ];

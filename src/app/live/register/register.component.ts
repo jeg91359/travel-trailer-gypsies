@@ -39,14 +39,12 @@ export class RegisterComponent implements OnInit {
         form.value.id,
         form.value.firstName + " " + form.value.lastName,
         form.value.email,
-        form.value.username,
         form.value.password1
       );
       console.log(
         form.value.id,
         form.value.firstName + " " + form.value.lastName,
         form.value.email,
-        form.value.username,
         form.value.password1
       );
     }

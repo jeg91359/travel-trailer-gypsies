@@ -38,7 +38,7 @@
     "jsonwebtoken": "*",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "mongodb": "^3.2.7",
-    "mongoose": "^5.6.2",
+    "mongoose": "^5.7.1",
     "ng2-nouislider": "1.7.13",
     "ngx-chips": "2.0.0-beta.0",
     "ngx-gallery": "5.9.1",

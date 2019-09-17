@@ -23,18 +23,11 @@ export class UsersService {
     return this.usersUpdated.asObservable();
   }
 
-  addUser(
-    id: string,
-    name: string,
-    email: string,
-    username: string,
-    password: string
-  ) {
+  addUser(id: string, name: string, email: string, password: string) {
     const user: User = {
       id: null,
       name: name,
       email: email,
-      username: username,
       password: password
     };
     this.http
