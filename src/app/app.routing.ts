@@ -1,34 +1,28 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
-import { Routes, RouterModule } from '@angular/router';
-import { LandingComponent } from './live/landing/landing.component';
-import { BlogpostsComponent } from './live/blogposts/blogposts.component';
-import { BlogpostSwtdComponent } from './live/blogpost-swtd/blogpost-swtd.component';
-import { BlogpostRweaComponent } from './live/blogpost-rwea/blogpost-rwea.component';
-import { BlogpostHiwrComponent } from './live/blogpost-hiwr/blogpost-hiwr.component';
-import { LoginComponent } from './live/login/login.component';
-import { RegisterComponent } from './live/register/register.component';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { BrowserModule } from "@angular/platform-browser";
+import { Routes, RouterModule } from "@angular/router";
+import { LandingComponent } from "./landing/landing.component";
+import { BlogpostsComponent } from "./blogposts/blogposts.component";
+import { BlogpostSwtdComponent } from "./blogpost-swtd/blogpost-swtd.component";
+import { BlogpostRweaComponent } from "./blogpost-rwea/blogpost-rwea.component";
+import { BlogpostHiwrComponent } from "./blogpost-hiwr/blogpost-hiwr.component";
+import { LoginComponent } from "./login/login.component";
+import { RegisterComponent } from "./register/register.component";
 
-
-const routes: Routes =[
-    { path: '', redirectTo: 'live/landing', pathMatch: 'full' },
-    { path: 'live/login',     component: LoginComponent },
-    { path: 'live/register',     component: RegisterComponent },
-    { path: 'live/landing',     component: LandingComponent },
-    { path: 'live/blogposts',       component: BlogpostsComponent },
-    { path: 'live/blogpost-swtd',     component: BlogpostSwtdComponent },
-    { path: 'live/blogpost-rwea',     component: BlogpostRweaComponent },
-    { path: 'live/blogpost-hiwr',     component: BlogpostHiwrComponent }
+const routes: Routes = [
+  { path: "", redirectTo: "landing", pathMatch: "full" },
+  { path: "login", component: LoginComponent },
+  { path: "register", component: RegisterComponent },
+  { path: "landing", component: LandingComponent },
+  { path: "blogposts", component: BlogpostsComponent },
+  { path: "blogpost-swtd", component: BlogpostSwtdComponent },
+  { path: "blogpost-rwea", component: BlogpostRweaComponent },
+  { path: "blogpost-hiwr", component: BlogpostHiwrComponent }
 ];
 
 @NgModule({
-    imports: [
-        CommonModule,
-        BrowserModule,
-        RouterModule.forRoot(routes)
-    ],
-    exports: [
-    ],
+  imports: [CommonModule, BrowserModule, RouterModule.forRoot(routes)],
+  exports: []
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
