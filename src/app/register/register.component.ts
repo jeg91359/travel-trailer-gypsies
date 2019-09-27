@@ -33,20 +33,25 @@ export class RegisterComponent implements OnInit {
 
   onRegister(form: NgForm) {
     if (form.invalid) {
-      this.message = "Please enter a valid email address and password.";
+      console.log("invalid");
     } else {
-      this.usersService.addUser(
-        form.value.id,
-        form.value.firstName + " " + form.value.lastName,
-        form.value.email,
-        form.value.password1
-      );
-      console.log(
-        form.value.id,
-        form.value.firstName + " " + form.value.lastName,
-        form.value.email,
-        form.value.password1
-      );
+      if (form.value.password1 != form.value.password2) {
+        console.log("Passwords must match!");
+        this.message = "Passwords must match!";
+      } else {
+        this.usersService.addUser(
+          form.value.id,
+          form.value.firstName + " " + form.value.lastName,
+          form.value.email,
+          form.value.password1
+        );
+        console.log(
+          form.value.id,
+          form.value.firstName + " " + form.value.lastName,
+          form.value.email,
+          form.value.password1
+        );
+      }
     }
   }
 }

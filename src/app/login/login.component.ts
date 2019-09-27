@@ -49,11 +49,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.usersSub.unsubscribe();
   }
   onLogin(form: NgForm) {
-    if (form.invalid) {
-      this.message = "Please enter a valid email address and password.";
-    } else {
-      this.message = form.value.email + " " + form.value.password;
-    }
+    console.log(form.value);
   }
 
   // click event function toggle

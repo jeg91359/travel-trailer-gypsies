@@ -6,7 +6,13 @@
   <div class="container">
     <div class="col-md-4 content-center">
       <div class="card card-login card-plain">
-        <form (submit)="onLogin(loginForm)" #loginForm="ngForm" class="form was-validated" method="" action="">
+        <form
+          (submit)="onLogin(loginForm)"
+          #loginForm="ngForm"
+          class="form was-validated"
+          method=""
+          action=""
+        >
           <div class="header header-primary text-center">
             <div class="logo-container">
               <!-- <img src="assets/img/now-logo.png" alt="" /> -->
@@ -31,9 +37,12 @@
                 name="email"
                 ngModel
                 required
+                autocomplete="off"
               />
-              <div class="valid-feedback">Valid.</div>
-              <!-- <div class="invalid-feedback">Please enter a valid email address.</div> -->
+              <!-- <div class="valid-feedback">Valid.</div> -->
+              <!-- <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div> -->
             </div>
             <div
               class="input-group form-group-no-border input-lg"
@@ -55,13 +64,19 @@
                 required
                 minlength="8"
               />
+              <!-- <div class="valid-feedback">Valid.</div> -->
+              <!-- <div class="invalid-feedback">
+                Please enter a valid password.
+              </div> -->
             </div>
-            <button (click)="password()" class="btn btn-secondary btn-round">Show Password</button>
+            <button (click)="password()" class="btn btn-secondary btn-round">
+              Show Password
+            </button>
           </div>
           <div class="footer text-center">
             <!-- <a href="#pablo" class="btn btn-primary btn-round btn-lg btn-block">Get Started</a> -->
             <!-- An element to toggle between password visibility -->
-            
+
             <button
               type="submit"
               class="btn btn-primary btn-round btn-lg btn-block"

@@ -66,12 +66,12 @@ server.listen(port);
 
 // var app = Express();
 
-// const appUsers = require('./routes/appUsers');
+// const user = require('./routes/user');
 
 // app.use(BodyParser.json());
 // app.use(BodyParser.urlencoded({ extended: true }));
 
-// app.use('/appUsers', appUsers);
+// app.use('/user', user);
 
 // Set static folder
 // app.use(Express.static(Path.join(__dirname, 'src')));

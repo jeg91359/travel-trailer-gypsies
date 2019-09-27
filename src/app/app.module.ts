@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"; // this is needed!
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { RouterModule } from "@angular/router";
 import { AppRoutingModule } from "./app.routing";
@@ -35,7 +35,6 @@ import { RegisterComponent } from "./register/register.component";
     BrowserAnimationsModule,
     NgbModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule,
     RouterModule,
     AppRoutingModule,
     HttpClientModule,
