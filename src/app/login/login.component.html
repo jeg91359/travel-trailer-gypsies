@@ -6,6 +6,9 @@
   <div class="container">
     <div class="col-md-4 content-center">
       <div class="card card-login card-plain">
+          <!-- <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div> -->
         <form
           (submit)="onLogin(loginForm)"
           #loginForm="ngForm"
@@ -30,6 +33,7 @@
               </div>
               <input
                 type="email"
+                #emailInput="ngModel"
                 class="form-control"
                 placeholder="Email Address..."
                 (focus)="focus = true"
@@ -40,7 +44,7 @@
                 autocomplete="off"
               />
               <!-- <div class="valid-feedback">Valid.</div> -->
-              <!-- <div class="invalid-feedback">
+              <!-- <div class="invalid-feedback" *ngIf="emailInput.invalid">
                 Please enter a valid email address.
               </div> -->
             </div>
@@ -55,6 +59,7 @@
               </div>
               <input
                 [type]="show ? 'text' : 'password'"
+                #passwordInput="ngModel"
                 placeholder="Password..."
                 class="form-control"
                 (focus)="focus1 = true"

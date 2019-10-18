@@ -2,6 +2,7 @@ import { User } from "./user.model";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Subject } from "rxjs";
+import { map } from 'rxjs/operators';
 
 @Injectable({ providedIn: "root" })
 export class UsersService {
@@ -12,10 +13,21 @@ export class UsersService {
 
   getUsers() {
     this.http
-      .get<{ message: string; users: User[] }>("http://localhost:3000/users")
-      .subscribe(userData => {
-        this.users = userData.users;
-        this.usersUpdated.next([...this.users]);
+      .get<{ message: string; users: any }>(
+        "http://localhost:3000/users"
+        )
+      .pipe(map((userData) => {
+        return userData.users.map(user => {
+           return {
+            id: user._id,
+            email: user.email,
+            password: user.password
+           };
+        });
+      }))
+      .subscribe(transformedUsers => {
+        this.users = transformedUsers;
+        //this.usersUpdated.next([...this.users]);
       });
   }
 
@@ -23,19 +35,30 @@ export class UsersService {
     return this.usersUpdated.asObservable();
   }
 
-  addUser(id: string, name: string, email: string, password: string) {
-    const user: User = {
-      id: null,
-      name: name,
-      email: email,
-      password: password
-    };
-    this.http
-      .post<{ message: string }>("http://localhost:3000/users", user)
-      .subscribe(responseData => {
-        console.log("User added? = ", responseData.message);
-        this.users.push(user);
-        this.usersUpdated.next([...this.users]);
-      });
-  }
+  // addUser(id: string, email: string, password: string) {
+  //   const user: User = {
+  //     email: email,
+  //     password: password
+  //   };
+  //   this.http
+  //     .post<{ message: string }>(
+  //       "http://localhost:3000/user/register", user
+  //       )
+  //     .subscribe(responseData => {
+  //       console.log("User added? = ", responseData.message);
+  //       this.users.push(user);
+  //       this.usersUpdated.next([...this.users]);
+  //     });
+  // }
+
+  // login(email: string, password: string){
+  //   const user: User = {
+  //     email: email,
+  //     password: password
+  //   };
+  //   this.http.post("http://localhost:3000/user/login", user)
+  //   .subscribe(response => {
+  //     console.log(response);
+  //   })
+  // }
 }

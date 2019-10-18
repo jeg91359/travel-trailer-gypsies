@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { UsersService } from "../users.service";
+import { AuthService } from 'app/auth.service';
 
 @Component({
   selector: "app-register",
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   message: string = "";
   data: Date = new Date();
 
-  constructor(public usersService: UsersService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit() {
     var body = document.getElementsByTagName("body")[0];
@@ -33,21 +33,17 @@ export class RegisterComponent implements OnInit {
 
   onRegister(form: NgForm) {
     if (form.invalid) {
-      console.log("invalid");
+      console.log(form.value);
     } else {
       if (form.value.password1 != form.value.password2) {
         console.log("Passwords must match!");
         this.message = "Passwords must match!";
       } else {
-        this.usersService.addUser(
-          form.value.id,
-          form.value.firstName + " " + form.value.lastName,
+        this.authService.createUser(
           form.value.email,
           form.value.password1
         );
         console.log(
-          form.value.id,
-          form.value.firstName + " " + form.value.lastName,
           form.value.email,
           form.value.password1
         );

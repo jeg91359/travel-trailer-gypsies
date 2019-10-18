@@ -3,8 +3,23 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const userRoutes = require("../routes/user")
 
 const app = express();
+
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+mongoose.connect("mongodb+srv://jeg91359:virgin99@traveltrailergypsies-rd15t.mongodb.net/TravelTrailerGypsies?retryWrites=true&w=majority")
+  .then(() => {
+console.log('Connected to database!')
+  })
+  .catch(() => {
+    console.log('Connection failed!')
+  });
 
 app.use(bodyParser.json());
 
@@ -21,33 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.post("/users", (req, res, next) => {
-  const user = req.body;
-  console.log(user);
-  res.status(201).json({
-    message: "User added successfully!"
-  });
-});
-
-app.get("/users", (req, res, next) => {
-  const users = [
-    {
-      id: "kuhoiughn2211",
-      name: "John Doe",
-      email: "doe@gmail.com",
-      password: "jd12345"
-    },
-    {
-      id: "oiwdcoij39804ur90384",
-      name: "Jane Smith",
-      email: "smithj@gmail.com",
-      password: "js1234"
-    }
-  ];
-  res.status(200).json({
-    message: "User list",
-    users: users
-  });
-});
+app.use(userRoutes);
+console.log(userRoutes);
 
 module.exports = app;
