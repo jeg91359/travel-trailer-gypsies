@@ -39,7 +39,7 @@
     "jsonwebtoken": "^8.5.1",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "mongodb": "^3.2.7",
-    "mongoose": "^5.7.1",
+    "mongoose": "^5.7.5",
     "mongoose-unique-validator": "^2.0.3",
     "ng2-nouislider": "1.7.13",
     "ngx-chips": "2.0.0-beta.0",
