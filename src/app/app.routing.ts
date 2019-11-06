@@ -4,9 +4,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 import { LandingComponent } from "./landing/landing.component";
 import { BlogpostsComponent } from "./blogposts/blogposts.component";
-import { BlogpostSwtdComponent } from "./blogpost-swtd/blogpost-swtd.component";
-import { BlogpostRweaComponent } from "./blogpost-rwea/blogpost-rwea.component";
-import { BlogpostHiwrComponent } from "./blogpost-hiwr/blogpost-hiwr.component";
+import { BlogpostSwtdComponent } from "./blogposts/blogpost-swtd/blogpost-swtd.component";
+import { BlogpostRweaComponent } from "./blogposts/blogpost-rwea/blogpost-rwea.component";
+import { BlogpostHiwrComponent } from "./blogposts/blogpost-hiwr/blogpost-hiwr.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 

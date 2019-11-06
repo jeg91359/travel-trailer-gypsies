@@ -20,6 +20,7 @@ export class AuthService {
       const authData: AuthData = {email: email, password: password};
       this.http.post("http://localhost:3000/login", authData)
         .subscribe(response => {
+          console.log(response);
         });
       }
 }
