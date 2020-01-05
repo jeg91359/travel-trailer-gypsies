@@ -1,0 +1,70 @@
+<div *ngIf="showEditComponent" class="section section-comments">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="media-area">
+          <form
+            class="form was-validated"
+            (submit)="onUpdateComment(commentForm)"
+            #commentForm="ngForm"
+          >
+            <h3 class="title text-center">Edit your comment</h3>
+            <div class="media media-post">
+              <a class="pull-left author" href="#pablo">
+                <div class="avatar">
+                  <img
+                    class="media-object img-raised"
+                    alt="64x64"
+                    src="assets/img/Indi_1.jpg"
+                  />
+                </div>
+              </a>
+              <div class="media-body">
+                <h5 class="media-heading">
+                  <textarea
+                    class="form-control"
+                    placeholder="Comment Title..."
+                    [ngModel]="comment?.title"
+                    required
+                    name="title"
+                    #titleInput="ngModel"
+                  ></textarea>
+                  <!-- <div class="valid-feedback">Valid.</div>-->
+                  <!-- <div class="invalid-feedback" *ngIf="titleInput.invalid">
+                    Please enter a valid title.
+                  </div>  -->
+                </h5>
+                <h5 class="media-heading">
+                  <textarea
+                    class="form-control"
+                    [ngModel]="comment?.content"
+                    placeholder="Comment Content..."
+                    rows="4"
+                    required
+                    name="content"
+                    #contentInput="ngModel"
+                  ></textarea>
+                  <!-- <div class="valid-feedback">Valid.</div>-->
+                  <!-- <div class="invalid-feedback" *ngIf="contentInput.invalid">
+                    Please enter valid content.
+                  </div>  -->
+                </h5>
+                <div class="media-footer">
+                  <!-- <a href="#pablo" class="btn btn-primary pull-left">
+                              <i class="now-ui-icons ui-1_send"></i> Reply
+                  </a> -->
+                  <button (click)="onClose()" class="btn btn-secondary pull-left">
+                    Close
+                  </button>
+                  <button class="btn btn-primary pull-right" type="submit">
+                    Update Comment
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

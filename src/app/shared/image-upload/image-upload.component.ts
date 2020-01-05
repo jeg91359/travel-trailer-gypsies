@@ -34,6 +34,7 @@ export class ImageUploadComponent implements OnInit {
             this.state.file = file;
             this.state.imagePreviewUrl = reader.result;
             // this.state.imagePreviewUrl1 = reader.result;
+            console.log('handleImageChange' + this.state.file);
         }
         reader.readAsDataURL(file);
     }
@@ -42,6 +43,7 @@ export class ImageUploadComponent implements OnInit {
         // this.state.file is the file/image uploaded
         // in this function you can save the image (this.state.file) on form submit
         // you have to call it yourself
+        console.log('handleSubmit');
     }
     handleClick(){
         this.input.nativeElement.children[2].click();

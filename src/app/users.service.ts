@@ -20,45 +20,17 @@ export class UsersService {
         return userData.users.map(user => {
            return {
             id: user._id,
-            email: user.email,
+            username: user.username,
             password: user.password
            };
         });
       }))
       .subscribe(transformedUsers => {
         this.users = transformedUsers;
-        //this.usersUpdated.next([...this.users]);
       });
   }
 
   getUserUpdateListener() {
     return this.usersUpdated.asObservable();
   }
-
-  // addUser(id: string, email: string, password: string) {
-  //   const user: User = {
-  //     email: email,
-  //     password: password
-  //   };
-  //   this.http
-  //     .post<{ message: string }>(
-  //       "http://localhost:3000/user/register", user
-  //       )
-  //     .subscribe(responseData => {
-  //       console.log("User added? = ", responseData.message);
-  //       this.users.push(user);
-  //       this.usersUpdated.next([...this.users]);
-  //     });
-  // }
-
-  // login(email: string, password: string){
-  //   const user: User = {
-  //     email: email,
-  //     password: password
-  //   };
-  //   this.http.post("http://localhost:3000/user/login", user)
-  //   .subscribe(response => {
-  //     console.log(response);
-  //   })
-  // }
 }

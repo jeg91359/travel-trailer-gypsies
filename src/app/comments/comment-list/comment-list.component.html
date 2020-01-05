@@ -1,0 +1,78 @@
+<div class="section section-comments">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="media-area" *ngIf="comments.length > 0">
+          <h3 class="title text-center">{{ comments.length }} Comment(s)</h3>
+          <div class="media" *ngFor="let comment of comments">
+            <!-- <a class="pull-left" href="#pablo">
+                          <div class="avatar">
+                              <img class="media-object img-raised" src="assets/img/james.jpg" alt="..." />
+                          </div>
+                      </a> -->
+            <div class="media-body">
+              <h5 class="media-heading">
+                <!-- <small class="text-muted">&middot; 7 minutes ago</small> -->
+              </h5>
+              <div class="media-footer">
+                <!-- <a href="#pablo" class="btn btn-primary btn-neutral pull-right" placement="top" ngbTooltip="Reply to Comment">
+                                  <i class="now-ui-icons ui-1_send"></i> Reply
+                              </a> -->
+                <!-- <a href="#pablo" class="btn btn-danger btn-neutral pull-right">
+                                  <i class="now-ui-icons ui-2_favourite-28"></i> 243
+                              </a> -->
+              </div>
+            </div>
+          </div>
+          <div class="media" *ngFor="let comment of comments">
+            <a class="pull-left" href="#pablo">
+              <div class="avatar">
+                <img
+                  class="media-object img-raised"
+                  alt="Picture"
+                  src="assets/img/Indi_1.jpg"
+                />
+              </div>
+            </a>
+            <div class="media-body">
+              <h5 class="media-heading">
+                {{ comment.title }}
+                <!-- <small class="text-muted">&middot; Yesterday</small> -->
+              </h5>
+              <p>{{ comment.content }}</p>
+              <div class="media-footer">
+                <a
+                  *ngIf="userIsAuthenticated"
+                  class="btn btn-danger btn-neutral pull-right"
+                  (click)="onDelete(comment.id)"
+                  placement="top"
+                  ngbTooltip="Delete"
+                >
+                  <!-- <i class="now-ui-icons ui-2_favourite-28"></i> 25 -->
+                  <i class="fas fa-trash-alt"></i> Delete
+                </a>
+                <a
+                  *ngIf="userIsAuthenticated"
+                  class="btn btn-primary btn-neutral pull-right"
+                  (click)="onEdit(comment.id)"
+                  placement="top"
+                  ngbTooltip="Edit"
+                >
+                  <!-- <i class="now-ui-icons ui-1_send"></i> Edit -->
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+              </div>
+              <div *ngIf="showEdit && commentId == comment.id">
+                <app-comment-edit
+                  [showEditComponent]="showEdit"
+                  [commentId]="commentId"
+                  (closeEditComponent)="onCloseEdit($event)"
+                ></app-comment-edit>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

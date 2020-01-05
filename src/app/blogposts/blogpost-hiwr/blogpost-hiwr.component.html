@@ -186,7 +186,8 @@
         </div>
       </div>
     </div>
-    <app-comment-create></app-comment-create>
+    <app-comment-create  *ngIf="userIsAuthenticated"></app-comment-create>
+    <app-comment-list></app-comment-list>
     <footer class="footer " data-background-color="black">
       <div class="container">
         <div class="copyright">

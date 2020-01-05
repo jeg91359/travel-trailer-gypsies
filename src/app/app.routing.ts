@@ -7,8 +7,8 @@ import { BlogpostsComponent } from "./blogposts/blogposts.component";
 import { BlogpostSwtdComponent } from "./blogposts/blogpost-swtd/blogpost-swtd.component";
 import { BlogpostRweaComponent } from "./blogposts/blogpost-rwea/blogpost-rwea.component";
 import { BlogpostHiwrComponent } from "./blogposts/blogpost-hiwr/blogpost-hiwr.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
+import { LoginComponent } from "./auth/login/login.component";
+import { RegisterComponent } from "./auth/register/register.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "landing", pathMatch: "full" },

@@ -1,5 +1,6 @@
 //This is the Node Server...run it by typing "nodemon server.js" in the terminal
 
+//these 3 lines of code are node.js import statements
 const app = require("./backend/app"); //this is the express app
 const debug = require("debug")("node-angular");
 const http = require("http");
