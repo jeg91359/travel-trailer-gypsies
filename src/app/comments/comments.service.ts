@@ -14,8 +14,6 @@ export class CommentsService {
   
   constructor(private http: HttpClient) {}
 
-  
-
   getComments() {
     this.http
       .get<{ message: string; comments: any }>(
@@ -45,7 +43,7 @@ export class CommentsService {
   }
 
   getComment(id: string) {
-    return this.http.get<{_id: string, title: string, content: string}>("http://localhost:3000/comment-list/" + id);
+    return this.http.get<{_id: string, title: string, content: string, creator: string}>("http://localhost:3000/comment-list/" + id);
   }
 
   addComment(title: string, content: string) {
@@ -60,7 +58,7 @@ export class CommentsService {
   }
 
   updateComment(id: string, title: string, content: string) {
-    const comment: Comment = { id: id, title: title, content: content};
+    const comment: Comment = { id: id, title: title, content: content, creator: null};
     this.http.put("http://localhost:3000/comment-edit/" + id, comment)
     .subscribe(response => {
       const updatedComments = [...this.comments];

@@ -9,6 +9,7 @@ import { BlogpostRweaComponent } from "./blogposts/blogpost-rwea/blogpost-rwea.c
 import { BlogpostHiwrComponent } from "./blogposts/blogpost-hiwr/blogpost-hiwr.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { RegisterComponent } from "./auth/register/register.component";
+import { AvatarCreateComponent } from './avatars/avatar-create/avatar-create.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "landing", pathMatch: "full" },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: "blogposts", component: BlogpostsComponent },
   { path: "blogpost-swtd", component: BlogpostSwtdComponent },
   { path: "blogpost-rwea", component: BlogpostRweaComponent },
-  { path: "blogpost-hiwr", component: BlogpostHiwrComponent }
+  { path: "blogpost-hiwr", component: BlogpostHiwrComponent },
+  { path: "avatar-create", component: AvatarCreateComponent}
 ];
 
 @NgModule({

@@ -21,7 +21,7 @@ router.post("/register", (req, res, next) => {
       })
       .catch(err => {
         res.status(500).json({
-          error: err
+          message: "Registration failed: this user already exists!"
         });
       });
   });
@@ -34,7 +34,7 @@ router.post("/login", (req, res, next) => {
     .then(user => {
       if (!user) {
         return res.status(401).json({
-          message: "Auth failed!"
+          message: "Login failed: incorrect username and/or password!"
         });
       }
       fetchedUser = user;
@@ -43,7 +43,7 @@ router.post("/login", (req, res, next) => {
     .then(result => {
       if (!result) {
         return res.status(401).json({
-          message: "Auth failed!"
+          message: "Login failed: incorrect username and/or password!"
         });
       }
       const token = jwt.sign(
@@ -53,16 +53,19 @@ router.post("/login", (req, res, next) => {
       );
       res.status(200).json({
         token: token,
-        expiresIn: 3600
+        expiresIn: 3600,
+        userId: fetchedUser._id
       });
     })
     .catch(err => {
       return res.status(401).json({
-        message: "Auth failed!"
+        message: "Login failed!"
       });
     });
 });
 
+// The "get" code below isn't wired to the Angular code
+// but I think it will be for fetching the avatar image
 router.get("/users", (req, res, next) => {
   User.find().then(documents => {
     console.log(documents);
@@ -73,7 +76,7 @@ router.get("/users", (req, res, next) => {
   });
 });
 
-// The "Delete" code below isn't wired to the Angular code...
+// The "delete" code below isn't wired to the Angular code...
 router.delete("/users/:id", (req, res, next) => {
   console.log(req.params.id);
   res.status(200).json({ message: "User deleted!" });

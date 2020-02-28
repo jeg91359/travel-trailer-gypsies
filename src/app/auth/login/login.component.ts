@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: "app-login",
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   focus1;
   message: string = "";
   show: boolean;
-  isLoading = false;
+  private authStatusSub: Subscription;
 
   constructor(public authService: AuthService, private router: Router) {}
 
@@ -24,6 +25,10 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     var navbar = document.getElementsByTagName("nav")[0];
     navbar.classList.add("navbar-transparent");
+
+    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
+      authStatus => {}
+    );
   }
 
   ngOnDestroy() {
@@ -39,7 +44,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       return;
     }
     this.authService.login(form.value.username, form.value.password);
-    this.router.navigate(['landing']);
+    //this.router.navigate(['landing']);
   }
 
   // click event function toggle

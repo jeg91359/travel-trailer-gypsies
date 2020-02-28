@@ -19,11 +19,15 @@ import { BlogpostSwtdComponent } from "./blogposts/blogpost-swtd/blogpost-swtd.c
 import { BlogpostRweaComponent } from "./blogposts/blogpost-rwea/blogpost-rwea.component";
 import { BlogpostHiwrComponent } from "./blogposts/blogpost-hiwr/blogpost-hiwr.component";
 import { RegisterComponent } from "./auth/register/register.component";
-import { CommentCreateComponent } from './comments/comment-create/comment-create.component';
-import { CommentListComponent } from './comments/comment-list/comment-list.component';
-import { CommentEditComponent } from './comments/comment-edit/comment-edit.component';
-import { ImageUploadModule } from './shared/image-upload/image-upload.module';
-import { AuthInterceptor } from './auth/auth-interceptor';
+import { CommentCreateComponent } from "./comments/comment-create/comment-create.component";
+import { CommentListComponent } from "./comments/comment-list/comment-list.component";
+import { CommentEditComponent } from "./comments/comment-edit/comment-edit.component";
+import { ImageUploadModule } from "./shared/image-upload/image-upload.module";
+import { AuthInterceptor } from "./auth/auth-interceptor";
+import { ErrorInterceptor } from './error-interceptor';
+import { ErrorComponent } from './error/error.component';
+import { AvatarCreateComponent } from './avatars/avatar-create/avatar-create.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { AuthInterceptor } from './auth/auth-interceptor';
     RegisterComponent,
     CommentCreateComponent,
     CommentListComponent,
-    CommentEditComponent
+    CommentEditComponent,
+    ErrorComponent,
+    AvatarCreateComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -56,7 +62,11 @@ import { AuthInterceptor } from './auth/auth-interceptor';
       apiKey: "YOUR_KEY_HERE"
     })
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorComponent]
 })
 export class AppModule {}

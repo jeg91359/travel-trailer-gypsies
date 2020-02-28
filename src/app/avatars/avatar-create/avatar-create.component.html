@@ -12,15 +12,9 @@
               <i class="now-ui-icons media-2_sound-wave"></i>
             </div>
             <div class="description">
-              <h5 class="info-title">Create Account?</h5>
+              <h5 class="info-title">Add an avatar?</h5>
               <p class="description">
-                You only need to create an account if you want the ability to
-                comment on blog posts.
-              </p>
-              <p class="description">
-                If you decide to create an account enter a username and
-                password. The only requirement for your password is that it be
-                at least 8 characters long.
+                You can add a personalized image here which will show up alongside your comments.
               </p>
             </div>
           </div>
@@ -37,7 +31,7 @@
                 method=""
                 action=""
               >
-                <div
+                <!-- <div
                   class="input-group"
                   [ngClass]="{ 'input-group-focus': focus2 === true }"
                 >
@@ -57,8 +51,8 @@
                     required
                     username
                   />
-                </div>
-                <div
+                </div> -->
+                <!-- <div
                   class="input-group"
                   [ngClass]="{ 'input-group-focus': focus2 === true }"
                 >
@@ -77,8 +71,8 @@
                     minlength="8"
                     onchange="form.password2.pattern = this.value;"
                   />
-                </div>
-                <div
+                </div> -->
+                <!-- <div
                   class="input-group"
                   [ngClass]="{ 'input-group-focus': focus2 === true }"
                 >
@@ -96,8 +90,8 @@
                     required
                     minlength="8"
                   />
-                </div>
-                <!-- <app-image-upload [isRound]="true"></app-image-upload> -->
+                </div> -->
+                <app-image-upload [isRound]="true"></app-image-upload>
                 <div class="card-footer text-center">
                   <button
                     type="submit"

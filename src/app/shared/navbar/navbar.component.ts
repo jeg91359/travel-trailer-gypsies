@@ -1,4 +1,10 @@
-import { Component, OnInit, ElementRef, OnDestroy } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  OnDestroy,
+  HostListener
+} from "@angular/core";
 import {
   Location,
   LocationStrategy,
@@ -7,6 +13,7 @@ import {
 import { AuthService } from "app/auth/auth.service";
 import { Subscription } from "rxjs";
 
+@HostListener("window:scroll", ["$event"])
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
@@ -17,6 +24,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private sidebarVisible: boolean;
   private authListenerSubs: Subscription;
   userIsAuthenticated = false;
+  public isMenuCollapsed = true;
 
   constructor(
     public location: Location,
@@ -49,7 +57,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   sidebarClose() {
     const html = document.getElementsByTagName("html")[0];
-    this.toggleButton.classList.remove("toggled");
+    //this.toggleButton.classList.remove("toggled");
     this.sidebarVisible = false;
     html.classList.remove("nav-open");
   }
@@ -73,6 +81,17 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.authSerice.logout();
+  }
+
+  @HostListener("window:scroll", ["$event"])
+  onWindowScroll(e) {
+    //console.log("toggled");
+    let element = document.querySelector(".navbar");
+    if (window.pageYOffset > element.clientHeight) {
+      element.classList.add("navbar-inverse");
+    } else {
+      element.classList.remove("navbar-inverse");
+    }
   }
 
   ngOnDestroy() {

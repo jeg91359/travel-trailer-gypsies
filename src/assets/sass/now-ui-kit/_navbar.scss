@@ -9,7 +9,7 @@
         vertical-align: middle;
 
         &:not(.btn):not(.dropdown-item){
-            color: $primary-color; //modified from white to primary...jeg
+            color: $warning-color; //changed from $white-color to $warning-color...jeg
             font-size: 2em;
             font-weight: 700;
             text-align: left;
@@ -55,7 +55,8 @@
 
         .nav-link:not(.btn){
             text-transform: uppercase;
-            font-size: $font-size-mini;
+            //font-size: $font-size-mini; commented out and added line below...jeg
+            font-size: 1.5em;
             padding: $padding-base-vertical $padding-base-horizontal;
             line-height: $line-height-nav-link;
 
@@ -118,7 +119,7 @@
 
     .navbar-brand{
         text-transform: uppercase;
-        font-size: $font-size-large-navbar; // modified from small...jeg
+        font-size: $font-size-small;
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
@@ -159,7 +160,7 @@
     &.navbar-transparent{
         background-color: $transparent-bg !important;
         box-shadow: none;
-        color: $white-color;
+        color: $warning-color;
         padding-top: 20px;
     }
 

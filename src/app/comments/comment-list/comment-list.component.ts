@@ -11,11 +11,12 @@ import { Subscription } from "rxjs";
 })
 export class CommentListComponent implements OnInit, OnDestroy {
   comments: Comment[] = [];
-  private commentsSub: Subscription;
   showEdit: boolean = false;
   commentId: string;
-  private authStatusSubs: Subscription;
   userIsAuthenticated = false;
+  userId: string;
+  private commentsSub: Subscription;
+  private authStatusSubs: Subscription;
 
   constructor(
     public commentsService: CommentsService,
@@ -24,6 +25,7 @@ export class CommentListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.commentsService.getComments();
+    this.userId = this.authSerice.getUserId();
     this.commentsSub = this.commentsService
       .getCommentUpdateListener()
       .subscribe((comments: Comment[]) => {
@@ -34,6 +36,7 @@ export class CommentListComponent implements OnInit, OnDestroy {
       .getAuthStatusListener()
       .subscribe(isAuthenticated => {
         this.userIsAuthenticated = isAuthenticated;
+        this.userId = this.authSerice.getUserId();
       });
   }
 

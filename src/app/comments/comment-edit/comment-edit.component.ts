@@ -23,7 +23,7 @@ export class CommentEditComponent implements OnInit {
   ngOnInit() {
     if (this.commentId != '') {
       this.commentsService.getComment(this.commentId).subscribe(commentData => {
-        this.comment = {id: commentData._id, title: commentData.title, content: commentData.content};
+        this.comment = {id: commentData._id, title: commentData.title, content: commentData.content, creator: commentData.creator};
       });
     }
   }

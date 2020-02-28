@@ -1,18 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from '../auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: "app-register",
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.scss"]
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit, OnDestroy {
   focus;
   focus1;
   focus2;
   message: string = "";
   data: Date = new Date();
+  private authStatusSub: Subscription;
 
   constructor(public authService: AuthService) {}
 
@@ -22,6 +24,9 @@ export class RegisterComponent implements OnInit {
     var navbar = document.getElementsByTagName("nav")[0];
     navbar.classList.add("navbar-absolute");
     navbar.classList.remove("fixed-top");
+    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
+      authStatus => {}
+    );
   }
   ngOnDestroy() {
     var body = document.getElementsByTagName("body")[0];
@@ -29,6 +34,7 @@ export class RegisterComponent implements OnInit {
     var navbar = document.getElementsByTagName("nav")[0];
     navbar.classList.remove("navbar-absolute");
     navbar.classList.add("fixed-top");
+    this.authStatusSub.unsubscribe();
   }
 
   onRegister(form: NgForm) {
