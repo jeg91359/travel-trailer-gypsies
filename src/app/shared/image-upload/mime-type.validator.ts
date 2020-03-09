@@ -21,6 +21,7 @@ export const mimeType = (
           header += arr[i].toString(16);
         }
         switch (header) {
+          // console.log(header);
           case "89504e47":
             isValid = true;
             break;
