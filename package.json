@@ -24,6 +24,7 @@
     "@angular/platform-browser-dynamic": "7.2.4",
     "@angular/platform-server": "7.2.4",
     "@angular/router": "7.2.4",
+    "@kolkov/ngx-gallery": "1.0.10",
     "@ng-bootstrap/ng-bootstrap": "^4.0.2",
     "angular2-multiselect-dropdown": "4.2.1",
     "bcrypt": "^3.0.6",
